@@ -64,10 +64,12 @@ console.log("Assessment loaded!");
 // Write a function ucFirst(str) that returns the string str with the
 // uppercased first character, for instance:
 
-// let ucFirst = (str) => str.substr(0, 1).toUpperCase() + str.substr(1);
+console.log("\n--------------------------------\nNumber 5\n");
 
-// console.log(ucFirst("dog"));
-// console.log(ucFirst("kitten"));
+let ucFirst = (str) => str.substr(0, 1).toUpperCase() + str.substr(1);
+
+console.log(ucFirst("dog"));
+console.log(ucFirst("kitten"));
 
 // 6. Check for spam
 
@@ -80,16 +82,18 @@ console.log("Assessment loaded!");
 // checkSpam('free xxxxx') == true
 // checkSpam("innocent rabbit") == false
 
-// let checkSpam = (str) => str.toLowerCase().search("viagra") != -1 || str.toLowerCase().search("xxx") != -1;
+console.log("\n--------------------------------\nNumber 6\n");
 
-// let emailString1 = 'buy ViAgRA now';
-// let emailString2 = 'free xxxx';
-// let emailString3 = 'innocent rabbit';
+let checkSpam = (str) => str.toLowerCase().search("viagra") != -1 || str.toLowerCase().search("xxx") != -1;
+
+let emailString1 = 'buy ViAgRA now';
+let emailString2 = 'free xxxx';
+let emailString3 = 'innocent rabbit';
 
 
-// console.log(checkSpam(emailString1));
-// console.log(checkSpam(emailString2));
-// console.log(checkSpam(emailString3));
+console.log(checkSpam(emailString1));
+console.log(checkSpam(emailString2));
+console.log(checkSpam(emailString3));
 
 // 7. Truncate the text
 
@@ -104,15 +108,17 @@ console.log("Assessment loaded!");
 // truncate("What I'd like to tell on this topic is:", 20) = "What I'd like to tel"
 // truncate("Hi everyone!", 20) = "Hi everyone!"
 
-// let truncate = (str, num) => (str.length > num) ? str.substr(0, num) : str;
+console.log("\n--------------------------------\nNumber 7\n");
 
-// let string1 = "What I'd like to tell on this topic is:";
-// let string2 = "What I'd like to tel";
-// let string3 = "Hi everyone!";
+let truncate = (str, num) => (str.length > num) ? str.substr(0, num) : str;
 
-// console.log(truncate(string1, 20));
-// console.log(truncate(string2, 20));
-// console.log(truncate(string3, 20));
+let string1 = "What I'd like to tell on this topic is:";
+let string2 = "What I'd like to tel";
+let string3 = "Hi everyone!";
+
+console.log(truncate(string1, 20));
+console.log(truncate(string2, 20));
+console.log(truncate(string3, 20));
 
 // 8. Extract the money
 
@@ -122,12 +128,14 @@ console.log("Assessment loaded!");
 // Create a function extractCurrencyValue(str) that would extract the numeric
 // value from such string and return it
 
-// let extractCurrencyValue = (str) => parseFloat(str.substr(1));
+console.log("\n--------------------------------\nNumber 8\n");
 
-// console.log(extractCurrencyValue("$120"));
-// console.log(extractCurrencyValue("$8372.32"));
-// console.log(extractCurrencyValue("$38217316.21"));
-// console.log(extractCurrencyValue("$0.23"));
+let extractCurrencyValue = (str) => parseFloat(str.substr(1));
+
+console.log(extractCurrencyValue("$120"));
+console.log(extractCurrencyValue("$8372.32"));
+console.log(extractCurrencyValue("$38217316.21"));
+console.log(extractCurrencyValue("$0.23"));
 
 // 9. The List
 
@@ -177,42 +185,46 @@ console.log("Assessment loaded!");
 // Shoes
 // 20, 100K, n, y - N
 
-// let clubTest = (age, income, isCelebrity, isWearingSneakers) => (age >= 18 && age < 35 && income >= 100000 && !isWearingSneakers) ||
-//                                                                 (!isWearingSneakers && isCelebrity && age >= 16) ||
-//                                                                 (!isWearingSneakers && income >= 5000000 && age >= 16) ||
-//                                                                 (income >= 250000 && age >= 18 && age < 25);
+console.log("\n--------------------------------\nNumber 9\n");
+
+let clubTest = (age, income, isCelebrity, isWearingSneakers) => (age >= 18 && age < 35 && income >= 100000 && !isWearingSneakers) ||
+                                                                (!isWearingSneakers && isCelebrity && age >= 16) ||
+                                                                (!isWearingSneakers && income >= 5000000 && age >= 16) ||
+                                                                (income >= 250000 && age >= 18 && age < 25);
 
 // Rare
-// console.log("RARE");
-// console.log(clubTest(15, 100000, true, false) + " should be false");
-// console.log(clubTest(16, 100000, true, false) + " should be true");
-// console.log(clubTest(16, 4.9000000, false, false) + " should be false");
-// console.log(clubTest(16, 5000000, false, false) + " should be true");
-// console.log(clubTest(17, 250000, false, true) + " should be false");
-// console.log(clubTest(25, 250000, false, true) + " should be false");
-// console.log(clubTest(20, 250000, false, true) + " should be true");
-// console.log(clubTest(20, 249000, false, true) + " should be false");
+console.log("RARE");
+console.log(clubTest(15, 100000, true, false) + " should be false");
+console.log(clubTest(16, 100000, true, false) + " should be true");
+console.log(clubTest(16, 4.9000000, false, false) + " should be false");
+console.log(clubTest(16, 5000000, false, false) + " should be true");
+console.log(clubTest(17, 250000, false, true) + " should be false");
+console.log(clubTest(25, 250000, false, true) + " should be false");
+console.log(clubTest(20, 250000, false, true) + " should be true");
+console.log(clubTest(20, 249000, false, true) + " should be false");
 
 // Age
-// console.log("AGE");
-// console.log(clubTest(17, 100000, false, false) + " should be false");
-// console.log(clubTest(18, 100000, false, false) + " should be true");
-// console.log(clubTest(35, 100000, false, false) + " should be false");
-// console.log(clubTest(34, 100000, false, false) + " should be true");
+console.log("AGE");
+console.log(clubTest(17, 100000, false, false) + " should be false");
+console.log(clubTest(18, 100000, false, false) + " should be true");
+console.log(clubTest(35, 100000, false, false) + " should be false");
+console.log(clubTest(34, 100000, false, false) + " should be true");
 
 // Income
-// console.log("INCOME");
-// console.log(clubTest(20, 99000, false, false) + " should be false");
-// console.log(clubTest(20, 100000, false, false) + " should be true");
+console.log("INCOME");
+console.log(clubTest(20, 99000, false, false) + " should be false");
+console.log(clubTest(20, 100000, false, false) + " should be true");
 
 // Shoes
-// console.log("SHOES");
-// console.log(clubTest(20, 100000, false, true) + " should be false");
+console.log("SHOES");
+console.log(clubTest(20, 100000, false, true) + " should be false");
 
 // 10. Perfect Change
 // Prompt the user for a dollar amount they would like perfect change for. (eg. 100 = $1)
 // Write code that intakes the users money and prints to the console perfect change.
 // Once the change has been printed in the console the code should stop running.
+
+console.log("\n--------------------------------\nNumber 10\n");
 
 let change = (money) => {
     let output = "";
