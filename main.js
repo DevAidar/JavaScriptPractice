@@ -33,10 +33,8 @@ console.log("Assessment loaded!");
 
 // Examples of its work:
 
-// function random(min, max) {
-//     return Math.random() * (max - min) + min;
-// }
-//
+// let random = (min, max) => Math.random() * (max - min) + min;
+
 // alert( random(1, 5) ); // 1.2345623452
 // alert( random(1, 5) ); // 3.7894332423
 // alert( random(1, 5) ); // 4.3435234525
@@ -52,10 +50,8 @@ console.log("Assessment loaded!");
 
 // Examples of its work:
 
-// function randomInteger(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1) + min);
-// }
-//
+// let randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
 // alert( randomInteger(1, 5) ); // 1
 // alert( randomInteger(1, 5) ); // 3
 // alert( randomInteger(1, 5) ); // 5
@@ -68,10 +64,8 @@ console.log("Assessment loaded!");
 // Write a function ucFirst(str) that returns the string str with the
 // uppercased first character, for instance:
 
-// function ucFirst(str) {
-//     return str.substr(0, 1).toUpperCase() + str.substr(1);
-// }
-//
+// let ucFirst = (str) => str.substr(0, 1).toUpperCase() + str.substr(1);
+
 // console.log(ucFirst("dog"));
 // console.log(ucFirst("kitten"));
 
@@ -82,19 +76,17 @@ console.log("Assessment loaded!");
 
 // The function must be case-insensitive:
 
-// function checkSpam(str) {
-//     return str.toLowerCase().search("viagra") != -1 || str.toLowerCase().search("xxx") != -1;
-// }
-
 // checkSpam('buy ViAgRA now') == true
 // checkSpam('free xxxxx') == true
 // checkSpam("innocent rabbit") == false
 
+// let checkSpam = (str) => str.toLowerCase().search("viagra") != -1 || str.toLowerCase().search("xxx") != -1;
+
 // let emailString1 = 'buy ViAgRA now';
 // let emailString2 = 'free xxxx';
 // let emailString3 = 'innocent rabbit';
-//
-//
+
+
 // console.log(checkSpam(emailString1));
 // console.log(checkSpam(emailString2));
 // console.log(checkSpam(emailString3));
@@ -112,17 +104,12 @@ console.log("Assessment loaded!");
 // truncate("What I'd like to tell on this topic is:", 20) = "What I'd like to tel"
 // truncate("Hi everyone!", 20) = "Hi everyone!"
 
-// function truncate(str, num) {
-//     if (str.length > num) {
-//         return str.substr(0, 20);
-//     }
-//     return str;
-// }
-//
+// let truncate = (str, num) => (str.length > num) ? str.substr(0, num) : str;
+
 // let string1 = "What I'd like to tell on this topic is:";
 // let string2 = "What I'd like to tel";
 // let string3 = "Hi everyone!";
-//
+
 // console.log(truncate(string1, 20));
 // console.log(truncate(string2, 20));
 // console.log(truncate(string3, 20));
@@ -135,10 +122,8 @@ console.log("Assessment loaded!");
 // Create a function extractCurrencyValue(str) that would extract the numeric
 // value from such string and return it
 
-// function extractCurrencyValue(str) {
-//     return parseFloat(str.substr(1));
-// }
-//
+// let extractCurrencyValue = (str) => parseFloat(str.substr(1));
+
 // console.log(extractCurrencyValue("$120"));
 // console.log(extractCurrencyValue("$8372.32"));
 // console.log(extractCurrencyValue("$38217316.21"));
@@ -192,12 +177,10 @@ console.log("Assessment loaded!");
 // Shoes
 // 20, 100K, n, y - N
 
-// function clubTest(age, income, isCelebrity, isWearingSneakers) {
-//     return (age >= 18 && age < 35 && income >= 100000 && !isWearingSneakers) ||
-//            (!isWearingSneakers && isCelebrity && age >= 16) ||
-//            (!isWearingSneakers && income >= 5000000 && age >= 16) ||
-//            (income >= 250000 && age >= 18 && age < 25);
-// }
+// let clubTest = (age, income, isCelebrity, isWearingSneakers) => (age >= 18 && age < 35 && income >= 100000 && !isWearingSneakers) ||
+//                                                                 (!isWearingSneakers && isCelebrity && age >= 16) ||
+//                                                                 (!isWearingSneakers && income >= 5000000 && age >= 16) ||
+//                                                                 (income >= 250000 && age >= 18 && age < 25);
 
 // Rare
 // console.log("RARE");
@@ -231,77 +214,91 @@ console.log("Assessment loaded!");
 // Write code that intakes the users money and prints to the console perfect change.
 // Once the change has been printed in the console the code should stop running.
 
-// function change(money) {
-//     let output = "";
-//
-//     // 20$
-//     let changeAmmount = parseInt(money / 20);
-//     for (let i = 0; i < changeAmmount; i++) {
-//         output += "20$\n";
-//     }
-//     money -= changeAmmount * 20;
-//
-//     // 10$
-//     changeAmmount = parseInt(money / 10);
-//     for (let i = 0; i < changeAmmount; i++) {
-//         output += "10$\n";
-//     }
-//     money -= changeAmmount * 10;
-//
-//     // 5$
-//     changeAmmount = parseInt(money / 5);
-//     for (let i = 0; i < changeAmmount; i++) {
-//         output += "5$\n";
-//     }
-//     money -= changeAmmount * 5;
-//
-//     // 1$
-//     changeAmmount = parseInt(money);
-//     for (let i = 0; i < changeAmmount; i++) {
-//         output += "1$\n";
-//     }
-//     money -= changeAmmount;
-//
-//     // Converting $ to cents
-//     money *= 100;
-//     money = Math.round(money);
-//
-//     // Quarter
-//     changeAmmount = parseInt(money / 25);
-//     for (let i = 0; i < changeAmmount; i++) {
-//         output += "Quarter\n";
-//     }
-//     money -= changeAmmount * 25;
-//
-//     // Dime
-//     changeAmmount = parseInt(money / 10);
-//     for (let i = 0; i < changeAmmount; i++) {
-//         output += "Dime\n";
-//     }
-//     money -= changeAmmount * 10;
-//
-//     // Nickel
-//     changeAmmount = parseInt(money / 5);
-//     for (let i = 0; i < changeAmmount; i++) {
-//         output += "Nickel\n";
-//     }
-//     money -= changeAmmount * 5;
-//
-//     // Penny
-//     changeAmmount = parseInt(money);
-//     for (let i = 0; i < changeAmmount; i++) {
-//         output += "Penny\n";
-//     }
-//     money -= changeAmmount;
-//
-//     return output;
-// }
-//
-// console.log(98.82);
-// console.log(change(98.82));
-// let randomNumber = parseInt(Math.random() * 10000) / 100;
-// console.log(randomNumber);
-// console.log(change(randomNumber));
+let change = (money) => {
+    let output = "";
+
+    // 100$
+    let changeAmmount = parseInt(money / 100);
+    for (let i = 0; i < changeAmmount; i++) {
+        output += "100$\n";
+    }
+    money -= changeAmmount * 100;
+
+    // 50$
+    changeAmmount = parseInt(money / 50);
+    for (let i = 0; i < changeAmmount; i++) {
+        output += "50$\n";
+    }
+    money -= changeAmmount * 50;
+
+    // 20$
+    changeAmmount = parseInt(money / 20);
+    for (let i = 0; i < changeAmmount; i++) {
+        output += "20$\n";
+    }
+    money -= changeAmmount * 20;
+
+    // 10$
+    changeAmmount = parseInt(money / 10);
+    for (let i = 0; i < changeAmmount; i++) {
+        output += "10$\n";
+    }
+    money -= changeAmmount * 10;
+
+    // 5$
+    changeAmmount = parseInt(money / 5);
+    for (let i = 0; i < changeAmmount; i++) {
+        output += "5$\n";
+    }
+    money -= changeAmmount * 5;
+
+    // 1$
+    changeAmmount = parseInt(money);
+    for (let i = 0; i < changeAmmount; i++) {
+        output += "1$\n";
+    }
+    money -= changeAmmount;
+
+    // Converting $ to cents
+    money *= 100;
+    money = Math.round(money);
+
+    // Quarter
+    changeAmmount = parseInt(money / 25);
+    for (let i = 0; i < changeAmmount; i++) {
+        output += "Quarter\n";
+    }
+    money -= changeAmmount * 25;
+
+    // Dime
+    changeAmmount = parseInt(money / 10);
+    for (let i = 0; i < changeAmmount; i++) {
+        output += "Dime\n";
+    }
+    money -= changeAmmount * 10;
+
+    // Nickel
+    changeAmmount = parseInt(money / 5);
+    for (let i = 0; i < changeAmmount; i++) {
+        output += "Nickel\n";
+    }
+    money -= changeAmmount * 5;
+
+    // Penny
+    changeAmmount = parseInt(money);
+    for (let i = 0; i < changeAmmount; i++) {
+        output += "Penny\n";
+    }
+    money -= changeAmmount;
+
+    return output;
+}
+
+console.log(98.82);
+console.log(change(98.82));
+let randomNumber = parseInt(Math.random() * 100000) / 100;
+console.log(randomNumber);
+console.log(change(randomNumber));
 
 // Examples:
 //    User inputs: 82
